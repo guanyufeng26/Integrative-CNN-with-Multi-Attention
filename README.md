@@ -46,15 +46,28 @@ pip install biopython transformers umap-learn matplotlib seaborn scikit-learn tq
 
 ## 🧪 Experimental Procedures
 ### Step 1 — Data Preprocessing & Dataset Partition
-• Run `data/data_standard.py` to clean missing values and perform feature normalization.
-• Split the whole balanced dataset into training set, validation set and independent test set with fixed random seed.
+• Collect raw protein data, remove redundant sequences and filter samples by sequence length.
+• Randomly split the processed dataset into training set, validation set and independent test set at an 8:1:1 ratio.
 
-### Step 1 — Feature Extraction
-• Execute scripts under the `feature/` folder to extract three groups of protein features: 6D AA Pairs, 68D PC properties and 256D ProtT5 embedding.
+### Step 2 — Feature Extraction
+• Execute scripts under the `feature/` folder to extract three groups of protein features: 
+| Feature | Description |
+|---------|-------------|
+| `6D AA Pairs` | Amino acid pair based on physicochemical properties |
+| `68D PC properties` | iLearnPlus-based feature extraction |
+| `256D ProtT5 embedding` | ProtT5 embedding features |
 
 ### Step 3 — Model Training & Attention Ablation Experiments
-• Train the complete multi-attention fused CNN model with codes in `ablation_train/`.
-• Multiple control groups of single-CNN / single attention modules are prepared for ablation comparison.
+• Train models with codes inside ablation_train/ to compare CNN combined with different attention mechanisms:
+| Model |
+|-------|
+| CNN+SENet |
+| CNN+CBAM |
+| CNN+global self-attention |
+| CNN+SENet+CBAM |
+| CNN+SENet+global self-attention |
+| CNN+CBAM+global self-attention |
+| CNN+SENet+CBAM+global self-attention |
 
 ### Step 4 — Model Performance Evaluation
 • Load the trained weight and run `test.py` on unseen independent test set.
