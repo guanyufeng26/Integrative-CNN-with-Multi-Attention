@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 import json
+import random
 import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization, \
@@ -9,10 +10,14 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropou
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.utils import to_categorical
-
 from sklearn.metrics import confusion_matrix, accuracy_score, matthews_corrcoef, f1_score, roc_auc_score, \
     precision_recall_curve, auc
 from sklearn.preprocessing import StandardScaler
+
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+tf.random.set_seed(SEED)
 
 DATA_DIR_6D = "./data/raw"
 DATA_DIR_68D = "./data/standardized"
