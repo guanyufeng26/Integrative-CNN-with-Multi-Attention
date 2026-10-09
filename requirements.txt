@@ -1,0 +1,12 @@
+python==3.8.18
+tensorflow>=2.8.0
+torch==2.4.1
+numpy==1.24.4
+pandas==2.0.3
+scikit‑learn>=1.1.0
+biopython>=1.81
+transformers>=4.30.0
+umap‑learn>=0.5.5
+matplotlib>=3.7.2
+seaborn>=0.12.2
+tqdm>=4.65.0
