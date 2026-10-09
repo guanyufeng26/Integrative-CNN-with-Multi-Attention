@@ -17,8 +17,11 @@ This open-source repository contains all the Python implementation codes of our 
 - Multi‑attention CNN is implemented with tf.keras (TensorFlow backend).
 - PyTorch 2.4.1 is only used for ProtT5 feature extraction.
 - Full training hyper‑parameters: see `train_config.json`.
-- Software dependencies: see `requirements.txt`.
-- The global random seed (seed=42) is implemented in the main model script `ablation_train/CNN_all_attn.py`. Other ablation scripts are provided for reference only and do not contain fixed random‑seed settings.
+- Software dependencies: see `requirements.txt` for the complete dependency list. Key library versions are summarized in the table below.
+- The global random seed (seed=42) is set in the main model script `ablation_train/CNN_all_attn.py`. Other ablation‑experiment scripts are provided for reference only and are not configured with fixed random seeds.
+- Multi‑seed robustness tests are implemented in the `multi_seed_stability/` folder.
+
+> Note: Although global random seeds are fully fixed, minor numerical fluctuations may still occur under GPU environments due to non‑deterministic CUDA operations.
 
 | Library  | Version |
 |----------|---------|
@@ -43,6 +46,7 @@ pip install biopython transformers umap-learn matplotlib seaborn scikit-learn tq
 | **`ablation_train/`** | Stores all codes for ablation experiments of different attention modules. |
 | **`data/`** | Contains all datasets used in the experiments. |
 | **`feature/`** | Extract three groups of protein features and fused integrated feature. |
+| **`multi_seed_stability/`** | Contains script and output JSON results for multi‑seed repeated experiments to assess model prediction robustness. |
 | **`UMAP_draw.py`** | UMAP dimensionality reduction & feature visualization script. |
 | **`case_predict.py`** | External real protein case prediction. |
 | **`test.py`** | Model evaluation. |
