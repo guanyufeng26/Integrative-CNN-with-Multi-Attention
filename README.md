@@ -14,6 +14,12 @@ This open-source repository contains all the Python implementation codes of our 
 ---
 
 ## ⚙️Environment Requirements
+- Multi‑attention CNN is implemented with tf.keras (TensorFlow backend).
+- PyTorch 2.4.1 is only used for ProtT5 feature extraction.
+- Full training hyper‑parameters: see `train_config.json`.
+- Software dependencies: see `requirements.txt`.
+- The global random seed (seed=42) is implemented in the main model script `ablation_train/CNN_all_attn.py`. Other ablation scripts are provided for reference only and do not contain fixed random‑seed settings.
+
 | Library  | Version |
 |----------|---------|
 | `python`   | 3.8.18  |
