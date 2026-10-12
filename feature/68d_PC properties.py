@@ -30,7 +30,7 @@ def extract_aac(seq):
     return aac, [f"AAC_{aa}" for aa in aa_list]
 
 def extract_dpc(seq):
-    dpc_list = ['AL','AR','KR','LL','RR','AG','GD','VE','SN','TD','HI','YK','FM','PW','TS','EV','QA','NH']
+    dpc_list = ['HH', 'AA', 'TA', 'LE', 'DG', 'AT', 'TT', 'DA', 'AG', 'GT', 'EL', 'PT', 'PS', 'EE', 'GG', 'TS', 'AD', 'AP']
     total = len(seq)
     dpc = []
     for dp in dpc_list:
