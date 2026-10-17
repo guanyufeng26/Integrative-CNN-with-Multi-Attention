@@ -7,8 +7,8 @@ This open-source repository contains all the Python implementation codes of our 
 ### Input Features
 | Feature  | Dimension |
 |--------------|-----------|
-| `AA Pairs`     | 6D        |
-| `PC properties`| 68D       |
+| `FGPF`     | 6D        |
+| `ADP`| 68D       |
 | `ProtT5 embedding` | 256D |
 
 ---
@@ -60,11 +60,11 @@ pip install biopython transformers umap-learn matplotlib seaborn scikit-learn tq
 • Execute scripts under the **`feature/`** folder to extract three groups of protein features and the fused integrated feature:
 | Feature | Description |
 |---------|-------------|
-| `6D AA Pairs` | Amino acid pair based on physicochemical properties |
-| `68D PC properties` | iLearnPlus-based feature extraction |
+| `6D FGPF` | Unctional-group-based amino-acid-pair frequency |
+| `68D ADP-68` | iLearnPlus-based feature extraction |
 | `256D ProtT5 embedding` | ProtT5 embedding features |
 
-• Optimal feature combination: **AA Pairs + PC properties**.
+• Optimal feature combination: **FGPF + ADP-68**.
 
 ### Step 3 — Model Training & Attention Ablation Experiments
 • Train models with codes inside  **`ablation_train/`**  to compare CNN combined with different attention mechanisms:
