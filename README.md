@@ -61,7 +61,7 @@ pip install biopython transformers umap-learn matplotlib seaborn scikit-learn tq
 | Feature | Description |
 |---------|-------------|
 | `6D FGPF` | Unctional-group-based amino-acid-pair frequency |
-| `68D ADP-68` | iLearnPlus-based feature extraction |
+| `68D ADP` | iLearnPlus-based feature extraction |
 | `256D ProtT5 embedding` | ProtT5 embedding features |
 
 • Optimal feature combination: **FGPF + ADP-68**.
